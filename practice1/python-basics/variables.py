@@ -1,0 +1,1 @@
+print("kbtu sila")
