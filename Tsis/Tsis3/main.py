@@ -24,9 +24,8 @@ settings = load_settings()
 username = "Player"
 
 
-# =========================
+
 # USERNAME INPUT
-# =========================
 def get_username():
     name = ""
     while True:
@@ -54,9 +53,8 @@ def get_username():
                     name += event.unicode
 
 
-# =========================
 # MAIN MENU
-# =========================
+
 def main_menu():
     buttons = {
         "play":        Button(140, 220, 220, 50, "Play"),
@@ -84,9 +82,7 @@ def main_menu():
                     return state
 
 
-# =========================
 # LEADERBOARD
-# =========================
 def leaderboard_screen():
     back_button = Button(140, 620, 220, 50, "Back")
     header_font = pygame.font.SysFont("Arial", 18, bold=True)
@@ -125,9 +121,7 @@ def leaderboard_screen():
                 return "menu"
 
 
-# =========================
 # SETTINGS
-# =========================
 def settings_screen():
     global settings
 
@@ -186,9 +180,7 @@ def settings_screen():
                 return "menu"
 
 
-# =========================
 # MAIN LOOP
-# =========================
 def main():
     global username, settings
     state = "menu"
@@ -206,9 +198,9 @@ def main():
                 state = "menu"
             else:
                 username = name
-                settings = load_settings()          # reload in case settings changed
+                settings = load_settings()         
                 game     = RacerGame(screen, settings, username)
-                state    = game.run()               # returns 'menu'/'retry'/'quit'
+                state    = game.run()         
 
         elif state == "retry":
             # restart with same username

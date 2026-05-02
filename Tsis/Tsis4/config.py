@@ -2,7 +2,7 @@
 
 import os
 
-# ── Grid / window ──────────────────────────────────────────────────────────────
+# ── Grid / window 
 CELL     = 20
 COLS     = 25
 ROWS     = 22
@@ -10,12 +10,12 @@ HUD_H    = 60
 SCREEN_W = CELL * COLS
 SCREEN_H = CELL * ROWS + HUD_H
 
-# ── Speed ──────────────────────────────────────────────────────────────────────
+# ── Speed 
 BASE_FPS        = 8
 FPS_PER_LEVEL   = 2
 FOODS_PER_LEVEL = 5
 
-# ── Colours ────────────────────────────────────────────────────────────────────
+# ── Colours 
 BLACK        = (0,   0,   0)
 WHITE        = (255, 255, 255)
 GREEN_BG     = (28,  120, 28)
@@ -55,7 +55,7 @@ UI_BTN        = (30,  35,  55)
 UI_BTN_HOV    = (50,  58,  90)
 UI_BTN_ACT    = (70,  80, 120)
 
-# ── Food type definitions ──────────────────────────────────────────────────────
+# ── Food type definitions 
 # (name, colour, highlight, multiplier, weight, ttl_seconds)
 FOOD_TYPES = [
     ("normal", (220,  40,  40), (255, 120, 120), 1, 60, 9),
@@ -64,7 +64,7 @@ FOOD_TYPES = [
 ]
 FOOD_WEIGHTS = [ft[4] for ft in FOOD_TYPES]
 
-# ── Power-up definitions ───────────────────────────────────────────────────────
+# ── Power-up definitions
 # (name, colour, highlight, field_ttl_seconds, effect_duration_seconds)
 POWERUP_TYPES = [
     ("speed",  PU_SPEED_COL,  PU_SPEED_HL,  8, 5),
@@ -72,15 +72,15 @@ POWERUP_TYPES = [
     ("shield", PU_SHIELD_COL, PU_SHIELD_HL, 8, 0),  # effect_duration 0 = one-shot
 ]
 
-# ── Speed modifiers for power-ups ─────────────────────────────────────────────
+# ── Speed modifiers for power-ups 
 SPEED_BOOST_EXTRA = 4   # +FPS while active
 SPEED_SLOW_REDUCE = 4   # -FPS while active (min 2)
 
-# ── Obstacles ─────────────────────────────────────────────────────────────────
+# ── Obstacles 
 OBSTACLES_PER_LEVEL = 3   # extra blocks added each level >= 3
 MAX_OBSTACLES       = 24
 
-# ── Database ──────────────────────────────────────────────────────────────────
+# ── Database 
 DB_CONFIG = {
     "host":     os.getenv("PGHOST",     "localhost"),
     "port":     int(os.getenv("PGPORT", "5432")),
@@ -89,7 +89,7 @@ DB_CONFIG = {
     "password": os.getenv("PGPASSWORD", "Bilge2007"),
 }
 
-# ── Directions ────────────────────────────────────────────────────────────────
+# ── Directions 
 UP    = ( 0, -1)
 DOWN  = ( 0,  1)
 LEFT  = (-1,  0)

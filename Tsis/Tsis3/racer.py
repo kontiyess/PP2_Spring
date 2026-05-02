@@ -9,9 +9,8 @@ from persistence import save_score
 from ui import draw_text, Button
 
 
-# =========================
+
 # CONFIG
-# =========================
 SCREEN_WIDTH  = 500
 SCREEN_HEIGHT = 700
 
@@ -103,9 +102,7 @@ def lane_center_x(lane: int) -> int:
     return ROAD_LEFT + lane * LANE_W + LANE_W // 2
 
 
-# =========================
 # FLOATING TEXT
-# =========================
 @dataclass
 class FloatingText:
     text:  str
@@ -119,9 +116,8 @@ class FloatingText:
         self.timer -= 1
 
 
-# =========================
+
 # SPRITES
-# =========================
 class Player(pygame.sprite.Sprite):
     def __init__(self, car_color: str = "blue"):
         super().__init__()
@@ -294,9 +290,7 @@ class PowerUp(pygame.sprite.Sprite):
             self.kill()
 
 
-# =========================
 # GAME OVER / FINISH SCREEN
-# =========================
 def result_screen(screen: pygame.Surface, title: str,
                   score: int, distance: int, coins: int,
                   font: pygame.font.Font, big_font: pygame.font.Font) -> str:
@@ -338,9 +332,7 @@ def result_screen(screen: pygame.Surface, title: str,
                 return "menu"
 
 
-# =========================
 # MAIN GAME
-# =========================
 class RacerGame:
     def __init__(self, screen: pygame.Surface, settings: dict, username: str):
         self.screen   = screen
@@ -387,7 +379,6 @@ class RacerGame:
         # road background image
         self.road_bg = _img("road.png", (ROAD_WIDTH, SCREEN_HEIGHT))
 
-    # ------------------------------------------------------------------ drawing
     def _draw_road(self):
         self.screen.fill((34, 120, 34))   # grass
 
