@@ -12,7 +12,6 @@ class Ball:
         new_x = self.x + dx
         new_y = self.y + dy
 
-        # проверка границ
         if self.radius <= new_x <= width - self.radius:
             self.x = new_x
         if self.radius <= new_y <= height - self.radius:
